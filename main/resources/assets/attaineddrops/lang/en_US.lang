@@ -3,6 +3,7 @@
 tile.blockMobDirt.name=Vitalized Soil
 tile.blockMobPlant.name=Mob Drop Plant
 tile.blockConcentrateDrop.name=Vitalized Soil Planter
+tile.blockMobBulb.name=Mob Drop Bulb 
 
 item.plantSeedUnlocalizedName.name=Mob Drop Plant Seed
 
