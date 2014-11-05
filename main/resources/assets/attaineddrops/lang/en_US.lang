@@ -9,7 +9,7 @@ item.plantSeedUnlocalizedName.name=Mob Drop Plant Seed
 phrase.AttainedDrops.BlockMobPlantUpdateComment=Random number in 0 - x that a plant update will occur, the higher x, the rarer the occasion
 phrase.AttainedDrops.BlockMobDirtResetComment=Random number in 0 - x that the dirt will reset, the higher x, the rarer the occasion
 phrase.AttainedDrops.BlockMobConcetrateDropComment=Random number in 0 - x that the vitalized soil will spread, the higher x, the rarer the occasion
-phrase.AttainedDrops.CanBulbBonemealComment=Wether or not bonemealing the plant in a mature form can cause a bulb to sprout, true results in the ability to bonemeal
+phrase.AttainedDrops.CanBulbBonemealComment=Whether or not bonemealing the plant in a mature form can cause a bulb to sprout, true results in the ability to bonemeal
 phrase.AttainedDrops.ChancetoBonemealBulbComment=Random number in 0 - x that bonemeal will successfully sprout bulb, the higher x, the rarer the occasion
 
 phrase.AttainedDrops.DirtBlank=This Vitalized Soil has not been enriched yet
