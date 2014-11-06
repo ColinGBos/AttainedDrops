@@ -31,7 +31,7 @@ public class ADConfig
 				BlockInfo.BlockMobDirtResetDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.BlockMobPlantUpdateMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobDirtResetComment"));
 
-		BlockInfo.BlockConcentrateDropUpate = config.getInt(BlockInfo.BlockConcentrateDropName, CATEGORY_BLOCKUPDATES,
+		BlockInfo.BlockConcentrateDropUpate = config.getInt(BlockInfo.BlockConcentrateDropUpdateName, CATEGORY_BLOCKUPDATES,
 				BlockInfo.BlockConcentrateDropUpateDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.BlockMobPlantUpdateMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobConcetrateDropComment"));
 

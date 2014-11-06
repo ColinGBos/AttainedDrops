@@ -66,8 +66,7 @@ public class BlockInfo
 
 	public static int BlockConcentrateDropUpateDefault = 5;
 	public static int BlockConcentrateDropUpate;
-	public static final String BlockConcentrateDropKey = "BlockConcentrateDropResetKey";
-	public static final String BlockConcentrateDropUpdateName = "BlockConcentrateDropReset";
+	public static final String BlockConcentrateDropUpdateName = "VitalizedSoilUpdate";
 
 
 }
