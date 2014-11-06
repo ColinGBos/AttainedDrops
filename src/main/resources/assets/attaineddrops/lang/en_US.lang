@@ -12,6 +12,8 @@ phrase.AttainedDrops.BlockMobDirtResetComment=Random number in 0 - x that the di
 phrase.AttainedDrops.BlockMobConcetrateDropComment=Random number in 0 - x that the vitalized soil will spread, the higher x, the rarer the occasion
 phrase.AttainedDrops.CanBulbBonemealComment=Whether or not bonemealing the plant in a mature form can cause a bulb to sprout, true results in the ability to bonemeal
 phrase.AttainedDrops.ChancetoBonemealBulbComment=Random number in 0 - x that bonemeal will successfully sprout bulb, the higher x, the rarer the occasion
+phrase.AttainedDrops.ChancetoParticleComment=Random number in 0 - x that bulb will spawn particles, the higher x, the rarer the occasion
+phrase.AttainedDrops.CanBulbParticleComment=Whether or not the bulb will spawn particles, true results in spawned particles
 
 phrase.AttainedDrops.DirtBlank=This Vitalized Soil has not been enriched yet
 phrase.AttainedDrops.DirtStart=Vitalized with:

@@ -37,10 +37,17 @@ public class ADConfig
 
 		BlockInfo.CanBulbBonemeal = config.getBoolean(BlockInfo.CanBulbBonemealName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.CanBulbBonemealDefault, StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbBonemealComment"));
+		
+		BlockInfo.ParticleBulb = config.getBoolean(BlockInfo.ParticleBulbName, CATEGORY_BLOCKOPTIONS,
+				BlockInfo.ParticleBulbDefault, StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbParticleComment"));
 
 		BlockInfo.ChancetoBonemealBulb = config.getInt(BlockInfo.ChancetoBonemealBulbName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.ChancetoBonemealBulbDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.ChancetoBonemealBulbMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.ChancetoBonemealBulbComment"));
+		
+		BlockInfo.ChancetoParticle = config.getInt(BlockInfo.ChancetoParticleName, CATEGORY_BLOCKOPTIONS,
+				BlockInfo.ChancetoParticleDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.ChancetoParticleMax,
+				StatCollector.translateToLocal("phrase.AttainedDrops.ChancetoParticleComment"));
 
 		config.save();
 
