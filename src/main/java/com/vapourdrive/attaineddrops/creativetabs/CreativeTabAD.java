@@ -23,14 +23,14 @@ public class CreativeTabAD extends CreativeTabs
 	{
 		return "AttainedDrops";
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public String getTranslatedTabLabel()
 	{
 		return "Attained Drops";
 	}
-	
+
 	@Override
 	public Item getTabIconItem()
 	{

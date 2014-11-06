@@ -43,8 +43,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 
 		for (int i = 0; i < mobDropPlant.length; ++i)
 		{
-			mobDropPlant[i] = icon.registerIcon(BlockInfo.BlockIconLocation
-					+ BlockInfo.BlockMobPlantIcon + i);
+			mobDropPlant[i] = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobPlantIcon + i);
 		}
 	}
 
@@ -61,18 +60,15 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	}
 
 	@Override
-	public void setBlockBoundsBasedOnState(IBlockAccess block, int x, int y,
-			int z)
+	public void setBlockBoundsBasedOnState(IBlockAccess block, int x, int y, int z)
 	{
 		this.maxY = (double) ((float) (block.getBlockMetadata(x, y, z) * 2 + 2) / 16.0F);
 		float f = 0.125F;
-		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f,
-				(float) this.maxY, 0.5F + f);
+		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, (float) this.maxY, 0.5F + f);
 	}
 
 	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_,
-			int p_149668_2_, int p_149668_3_, int p_149668_4_)
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_)
 	{
 		return null;
 	}
@@ -87,11 +83,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public boolean func_149851_a(World world, int x, int y, int z, boolean bool)
 	{
 		int i = world.getBlockMetadata(x, y, z);
-		if(i < 7)
+		if (i < 7)
 		{
 			return true;
-		}
-		else if (i == 7 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
+		} else if (i == 7 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 		{
 			return true;
 		}
@@ -117,13 +112,11 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 
 		if (l == 7 && BlockInfo.CanBulbBonemeal == true)
 		{
-			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z)
-					&& world.getBlockMetadata(x, y - 1, z) != 0 && world.rand.nextInt(BlockInfo.ChancetoBonemealBulb) == 0)
+			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && world.getBlockMetadata(x, y - 1, z) != 0
+					&& world.rand.nextInt(BlockInfo.ChancetoBonemealBulb) == 0)
 			{
-				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb,
-						(world.getBlockMetadata(x, y - 1, z) - 1), 2);
-				if (world.rand.nextInt(BlockInfo.BlockMobDirtReset) == 0
-						&& world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
+				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (world.getBlockMetadata(x, y - 1, z) - 1), 2);
+				if (world.rand.nextInt(BlockInfo.BlockMobDirtReset) == 0 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -155,14 +148,11 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		}
 		if (l == 7)
 		{
-			if (rand.nextInt(BlockInfo.BlockMobPlantUpdate) == 0
-					&& world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z)
+			if (rand.nextInt(BlockInfo.BlockMobPlantUpdate) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z)
 					&& world.getBlockMetadata(x, y - 1, z) != 0)
 			{
-				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb,
-						(world.getBlockMetadata(x, y - 1, z) - 1), 2);
-				if (rand.nextInt(BlockInfo.BlockMobDirtReset) == 0
-						&& world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
+				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (world.getBlockMetadata(x, y - 1, z) - 1), 2);
+				if (rand.nextInt(BlockInfo.BlockMobDirtReset) == 0 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -183,9 +173,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random rand)
 	{
-		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(0, rand,
-						fortune))
+		if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(0, rand, fortune))
 		{
 			int j = rand.nextInt(fortune + 2) - 1;
 

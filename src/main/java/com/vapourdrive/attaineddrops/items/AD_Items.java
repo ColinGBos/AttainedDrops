@@ -12,16 +12,16 @@ public class AD_Items
 	public static void init()
 	{
 		plantSeed = new ItemPlantSeed();
-		
-		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
-		
-	}
 
+		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
+
+	}
 
 	public static void registerRecipes()
 	{
-		GameRegistry.addShapelessRecipe(new ItemStack (plantSeed), new Object[]{Items.apple, new ItemStack(Items.dye, 1, 15), Items.wheat_seeds});
-		
+		GameRegistry.addShapelessRecipe(new ItemStack(plantSeed), new Object[]
+		{ Items.apple, new ItemStack(Items.dye, 1, 15), Items.wheat_seeds });
+
 	}
 
 }

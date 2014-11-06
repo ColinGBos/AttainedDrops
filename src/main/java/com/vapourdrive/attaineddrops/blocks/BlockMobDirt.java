@@ -20,7 +20,7 @@ public class BlockMobDirt extends Block
 {
 	public static IIcon[] mobDirtIcon;
 	public static IIcon mobDirtSide;
-	
+
 	protected BlockMobDirt()
 	{
 		super(Material.ground);
@@ -29,32 +29,32 @@ public class BlockMobDirt extends Block
 		setCreativeTab(AttainedDrops.tabAttainedDrops);
 		setStepSound(soundTypeGrass);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister icon)
 	{
 		mobDirtSide = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtSideIcon);
 		mobDirtIcon = new IIcon[BlockInfo.MobDrops.length];
-        for (int i = 0; i < BlockInfo.MobDrops.length; ++i)
-        {
-            mobDirtIcon[i] = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtIcon + i);
-        }
+		for (int i = 0; i < BlockInfo.MobDrops.length; ++i)
+		{
+			mobDirtIcon[i] = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtIcon + i);
+		}
 	}
-	
+
 	@Override
 	public IIcon getIcon(int side, int meta)
-	{	
+	{
 		if (side == 1)
 		{
 			return mobDirtIcon[meta];
-		}
-		else return mobDirtSide;
+		} else
+			return mobDirtSide;
 	}
-	
+
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-    {
+	{
 		if (player.getCurrentEquippedItem() != null)
 		{
 			for (int i = 0; i < BlockInfo.MobDrops.length; i++)
@@ -66,21 +66,23 @@ public class BlockMobDirt extends Block
 					return true;
 				}
 			}
-		}
-		else if(world.isRemote)
+		} else if (world.isRemote)
 		{
 			int i = world.getBlockMetadata(x, y, z);
-			if(world.getBlockMetadata(x, y, z) != 0)
+			if (world.getBlockMetadata(x, y, z) != 0)
 			{
-				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart") + " " + EnumChatFormatting.GREEN + 
-						StatCollector.translateToLocal(BlockInfo.MobDrops[i].getUnlocalizedNameInefficiently(new ItemStack(BlockInfo.MobDrops[i])) + ".name")));
+				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart")
+						+ " "
+						+ EnumChatFormatting.GREEN
+						+ StatCollector.translateToLocal(BlockInfo.MobDrops[i].getUnlocalizedNameInefficiently(new ItemStack(
+								BlockInfo.MobDrops[i])) + ".name")));
 			}
-			if(world.getBlockMetadata(x, y, z) == 0)
+			if (world.getBlockMetadata(x, y, z) == 0)
 			{
 				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtBlank")));
 			}
 		}
 		return false;
-    }
+	}
 
 }

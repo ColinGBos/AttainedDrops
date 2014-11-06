@@ -39,8 +39,7 @@ public class AttainedDrops
 	{
 
 		configPath = event.getModConfigurationDirectory() + "/attaineddrops/";
-		tabAttainedDrops = new CreativeTabAD(CreativeTabs.getNextID(),
-				"tabAttainedDrops");
+		tabAttainedDrops = new CreativeTabAD(CreativeTabs.getNextID(), "tabAttainedDrops");
 
 		MinecraftForge.EVENT_BUS.register(new ForgeEventFactory());
 		FMLCommonHandler.instance().bus().register(new FMLEvent());
@@ -63,14 +62,16 @@ public class AttainedDrops
 		AD_Blocks.registerRecipes();
 		OreDictionaryRegistry.init();
 
-		/*ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(
-				new WeightedRandomChestContent(new ItemStack(AD_Items.chestKey),
-						1, 1, 30));*/
+		/*
+		 * ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem( new
+		 * WeightedRandomChestContent(new ItemStack(AD_Items.chestKey), 1, 1,
+		 * 30));
+		 */
 
-		/* if (WorldInfo.GENERATE_WORLD == false)
-		{
-			new WorldStoneGeneration();
-		}*/
+		/*
+		 * if (WorldInfo.GENERATE_WORLD == false) { new WorldStoneGeneration();
+		 * }
+		 */
 	}
 
 	@EventHandler
