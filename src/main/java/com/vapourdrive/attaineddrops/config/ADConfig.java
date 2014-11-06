@@ -33,7 +33,7 @@ public class ADConfig
 
 		BlockInfo.BlockConcentrateDropUpate = config.getInt(BlockInfo.BlockConcentrateDropName, CATEGORY_BLOCKUPDATES,
 				BlockInfo.BlockConcentrateDropUpateDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.BlockMobPlantUpdateMax,
-				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobDirtResetComment"));
+				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobConcetrateDropComment"));
 
 		BlockInfo.CanBulbBonemeal = config.getBoolean(BlockInfo.CanBulbBonemealName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.CanBulbBonemealDefault, StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbBonemealComment"));
