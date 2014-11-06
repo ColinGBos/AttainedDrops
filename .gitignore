@@ -3,3 +3,7 @@
 *.ear
 *.war
 *~
+bin
+build
+.settings
+.gradle
