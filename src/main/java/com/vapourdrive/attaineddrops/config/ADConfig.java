@@ -15,6 +15,10 @@ public class ADConfig
 	private static final String CATEGORY_BLOCKUPDATES = "Block Updates";
 	private static final String CATEGORY_BLOCKOPTIONS = "Block Options";
 
+	/*
+	 * prints config options get posted to attaineddrops.cfg in here players can
+	 * set options for gameplay, tailoring it to their style
+	 */
 	public static void init(File adConfig)
 	{
 		config = new Configuration(adConfig);
@@ -35,16 +39,28 @@ public class ADConfig
 				BlockInfo.BlockConcentrateDropUpateDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.BlockMobPlantUpdateMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobConcetrateDropComment"));
 
+		// Block Options
 		BlockInfo.CanBulbBonemeal = config.getBoolean(BlockInfo.CanBulbBonemealName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.CanBulbBonemealDefault, StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbBonemealComment"));
-		
-		BlockInfo.ParticleBulb = config.getBoolean(BlockInfo.ParticleBulbName, CATEGORY_BLOCKOPTIONS,
-				BlockInfo.ParticleBulbDefault, StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbParticleComment"));
+
+		BlockInfo.ParticleBulb = config.getBoolean(BlockInfo.ParticleBulbName, CATEGORY_BLOCKOPTIONS, BlockInfo.ParticleBulbDefault,
+				StatCollector.translateToLocal("phrase.AttainedDrops.CanBulbParticleComment"));
 
 		BlockInfo.ChancetoBonemealBulb = config.getInt(BlockInfo.ChancetoBonemealBulbName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.ChancetoBonemealBulbDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.ChancetoBonemealBulbMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.ChancetoBonemealBulbComment"));
-		
+
+		BlockInfo.CanFortuneBulb = config.getBoolean(BlockInfo.CanFortuneBulbName, CATEGORY_BLOCKOPTIONS, BlockInfo.CanFortuneBulbDefault,
+				StatCollector.translateToLocal("phrase.AttainedDrops.CanFortuneBulbComment"));
+
+		BlockInfo.BulbStaticDropNumber = config.getInt(BlockInfo.BulbStaticDropNumberName, CATEGORY_BLOCKOPTIONS,
+				BlockInfo.BulbStaticDropNumberDefault, BlockInfo.BulbStaticDropNumberMin, BlockInfo.BulbStaticDropNumberMax,
+				StatCollector.translateToLocal("phrase.AttainedDrops.BulbStaticDropNumberComment"));
+
+		BlockInfo.BulbDynamicDropNumber = config.getInt(BlockInfo.BulbDynamicDropNumberName, CATEGORY_BLOCKOPTIONS,
+				BlockInfo.BulbDynamicDropNumberDefault, BlockInfo.BulbDynamicDropNumberMin, BlockInfo.BulbDynamicDropNumberMax,
+				StatCollector.translateToLocal("phrase.AttainedDrops.BulbDynamicDropNumberComment"));
+
 		BlockInfo.ChancetoParticle = config.getInt(BlockInfo.ChancetoParticleName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.ChancetoParticleDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.ChancetoParticleMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.ChancetoParticleComment"));

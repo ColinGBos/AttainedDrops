@@ -14,6 +14,9 @@ phrase.AttainedDrops.CanBulbBonemealComment=Whether or not bonemealing the plant
 phrase.AttainedDrops.ChancetoBonemealBulbComment=Random number in 0 - x that bonemeal will successfully sprout bulb, the higher x, the rarer the occasion
 phrase.AttainedDrops.ChancetoParticleComment=Random number in 0 - x that bulb will spawn particles, the higher x, the rarer the occasion
 phrase.AttainedDrops.CanBulbParticleComment=Whether or not the bulb will spawn particles, true results in spawned particles
+phrase.AttainedDrops.CanFortuneBulbComment=Whether or not fortune has an affect on the drop number of the plant bulb, true results in fortune having effect
+phrase.AttainedDrops.BulbStaticDropNumberComment=The static number of drops the bulb drops (j in "(random number 0 to i) + j") i is exclusive
+phrase.AttainedDrops.BulbDynamicDropNumberComment=The dynamic upper range of drops the bulb drops (i in "(random number 0 to i) + j") i is exclusive
 
 phrase.AttainedDrops.DirtBlank=This Vitalized Soil has not been enriched yet
 phrase.AttainedDrops.DirtStart=Vitalized with:

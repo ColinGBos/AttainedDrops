@@ -62,7 +62,7 @@ public class BlockMobDirt extends Block
 				if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[i] && world.getBlockMetadata(x, y, z) != i)
 				{
 					world.setBlockMetadataWithNotify(x, y, z, i, 2);
-					if(world.getWorldInfo().getGameType().isCreative() == false)
+					if (world.getWorldInfo().getGameType().isCreative() == false)
 					{
 						player.inventory.consumeInventoryItem(player.getCurrentEquippedItem().getItem());
 					}
