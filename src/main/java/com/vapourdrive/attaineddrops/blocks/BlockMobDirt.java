@@ -62,6 +62,7 @@ public class BlockMobDirt extends Block
 				if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[i] && world.getBlockMetadata(x, y, z) != i)
 				{
 					world.setBlockMetadataWithNotify(x, y, z, i, 2);
+					world.playSoundAtEntity(player, "dig.grass", (float)0.6, (float)0.8);
 					if (world.getWorldInfo().getGameType().isCreative() == false)
 					{
 						player.inventory.consumeInventoryItem(player.getCurrentEquippedItem().getItem());

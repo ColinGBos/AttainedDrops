@@ -2,10 +2,10 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
-import com.vapourdrive.attaineddrops.blocks.BlockInfo;
-
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.Configuration;
+
+import com.vapourdrive.attaineddrops.blocks.BlockInfo;
 
 public class ADConfig
 {
