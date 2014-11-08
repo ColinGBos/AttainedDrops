@@ -73,7 +73,6 @@ public class BlockMobDirt extends Block
 					return true;
 				}
 			}
-			return true;
 		} else if (world.isRemote)
 		{
 			if (k != 0)
