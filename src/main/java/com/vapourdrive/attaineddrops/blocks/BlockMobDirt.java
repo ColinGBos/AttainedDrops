@@ -55,35 +55,49 @@ public class BlockMobDirt extends Block
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
 	{
+		int k = world.getBlockMetadata(x, y, z);
+		int l = player.experienceLevel;
 		if (player.getCurrentEquippedItem() != null)
 		{
 			for (int i = 0; i < BlockInfo.MobDrops.length; i++)
 			{
-				if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[i] && world.getBlockMetadata(x, y, z) != i)
+				if (canPlayerEnrich(player, k, i, l) == true)
 				{
 					world.setBlockMetadataWithNotify(x, y, z, i, 2);
-					world.playSoundAtEntity(player, "dig.grass", (float)0.6, (float)0.8);
-					if (world.getWorldInfo().getGameType().isCreative() == false)
+					world.playSoundAtEntity(player, "dig.grass", (float) 0.6, (float) 0.8);
+					if (player.capabilities.isCreativeMode == false)
 					{
 						player.inventory.consumeInventoryItem(player.getCurrentEquippedItem().getItem());
+						player.experienceLevel = (l - BlockInfo.EnrichXpUse);
 					}
 					return true;
 				}
 			}
+			return true;
 		} else if (world.isRemote)
 		{
-			int i = world.getBlockMetadata(x, y, z);
-			if (world.getBlockMetadata(x, y, z) != 0)
+			if (k != 0)
 			{
 				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart")
 						+ " "
 						+ EnumChatFormatting.GREEN
-						+ StatCollector.translateToLocal(BlockInfo.MobDrops[i].getUnlocalizedNameInefficiently(new ItemStack(
-								BlockInfo.MobDrops[i])) + ".name")));
-			}
-			if (world.getBlockMetadata(x, y, z) == 0)
+						+ StatCollector.translateToLocal(BlockInfo.MobDrops[k].getUnlocalizedNameInefficiently(new ItemStack(
+								BlockInfo.MobDrops[k])) + ".name")));
+			} else
 			{
 				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtBlank")));
+			}
+		}
+		return false;
+	}
+
+	public boolean canPlayerEnrich(EntityPlayer player, int meta, int dropNumber, int experienceLevel)
+	{
+		if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[dropNumber] && meta != dropNumber)
+		{
+			if (experienceLevel >= BlockInfo.EnrichXpUse || BlockInfo.EnrichXpUse == 0)
+			{
+				return true;
 			}
 		}
 		return false;

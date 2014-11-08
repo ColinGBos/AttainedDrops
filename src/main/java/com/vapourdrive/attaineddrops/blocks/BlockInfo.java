@@ -22,6 +22,12 @@ public class BlockInfo
 	public static final String BlockModDirtResetKey = "BlockMobDirtResetKey";
 	public static final String BlockModDirtResetName = "BlockMobDirtReset";
 
+	public static int EnrichXpUseDefault = 0;
+	public static int EnrichXpUse;
+	public static String EnrichXpUseName = "SoilErichXpUse";
+	public static int EnrichXpUseMin = 0;
+	public static int EnrichXpUseMax = 40;
+
 	// Bulb Block
 	public static final String BlockMobBulbName = "blockMobBulb";
 	public static final Float BlockMobBulbHardness = 0.3F;

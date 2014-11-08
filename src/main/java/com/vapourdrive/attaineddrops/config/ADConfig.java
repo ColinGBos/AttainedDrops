@@ -14,6 +14,7 @@ public class ADConfig
 
 	private static final String CATEGORY_BLOCKUPDATES = "Block Updates";
 	private static final String CATEGORY_BLOCKOPTIONS = "Block Options";
+	private static final String CATEGORY_XP = "XP Consumption Options";
 
 	/*
 	 * prints config options get posted to attaineddrops.cfg in here players can
@@ -64,6 +65,10 @@ public class ADConfig
 		BlockInfo.ChancetoParticle = config.getInt(BlockInfo.ChancetoParticleName, CATEGORY_BLOCKOPTIONS,
 				BlockInfo.ChancetoParticleDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.ChancetoParticleMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.ChancetoParticleComment"));
+
+		BlockInfo.EnrichXpUse = config.getInt(BlockInfo.EnrichXpUseName, CATEGORY_XP, BlockInfo.EnrichXpUseDefault,
+				BlockInfo.EnrichXpUseMin, BlockInfo.EnrichXpUseMax,
+				StatCollector.translateToLocal("phrase.AttainedDrops.EnrichXpUseComment"));
 
 		config.save();
 

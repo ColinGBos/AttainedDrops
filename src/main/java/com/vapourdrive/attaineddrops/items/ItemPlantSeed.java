@@ -30,7 +30,7 @@ public class ItemPlantSeed extends Item
 			if (player.canPlayerEdit(x, y, z, side, stack) && side == 1)
 				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobPlant);
 			--stack.stackSize;
-			world.playSoundAtEntity(player, "dig.grass", (float)0.6, (float)1.0);
+			world.playSoundAtEntity(player, "dig.grass", (float) 0.6, (float) 1.0);
 			return true;
 		}
 
