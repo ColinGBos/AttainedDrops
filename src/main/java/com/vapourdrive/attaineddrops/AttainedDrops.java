@@ -2,11 +2,12 @@ package com.vapourdrive.attaineddrops;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.ForgeEventFactory;
 
 import com.vapourdrive.attaineddrops.blocks.AD_Blocks;
 import com.vapourdrive.attaineddrops.config.ConfigHandler;
 import com.vapourdrive.attaineddrops.creativetabs.CreativeTabAD;
+import com.vapourdrive.attaineddrops.events.FMLEventHooks;
+import com.vapourdrive.attaineddrops.events.ForgeEventHooks;
 import com.vapourdrive.attaineddrops.items.AD_Items;
 import com.vapourdrive.attaineddrops.materials.AD_Materials;
 import com.vapourdrive.attaineddrops.oredict.OreDictionaryRegistry;
@@ -17,7 +18,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -41,8 +41,8 @@ public class AttainedDrops
 		configPath = event.getModConfigurationDirectory() + "/attaineddrops/";
 		tabAttainedDrops = new CreativeTabAD(CreativeTabs.getNextID(), "tabAttainedDrops");
 
-		MinecraftForge.EVENT_BUS.register(new ForgeEventFactory());
-		FMLCommonHandler.instance().bus().register(new FMLEvent());
+		MinecraftForge.EVENT_BUS.register(new ForgeEventHooks());
+		FMLCommonHandler.instance().bus().register(new FMLEventHooks());
 
 		ConfigHandler.init(configPath);
 		proxy.initSounds();
