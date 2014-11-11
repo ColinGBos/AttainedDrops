@@ -18,7 +18,7 @@ public class ItemPlantSeed extends Item
 	{
 		super();
 		setCreativeTab(AttainedDrops.tabAttainedDrops);
-		this.setUnlocalizedName(ItemInfo.PlantSeedUnlocalizedName);
+		setUnlocalizedName(ItemInfo.PlantSeedUnlocalizedName);
 	}
 
 	@Override

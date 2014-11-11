@@ -6,6 +6,7 @@ tile.blockConcentrateDrop.name=Vitalized Soil Planter
 tile.blockMobBulb.name=Mob Drop Bulb 
 
 item.plantSeedUnlocalizedName.name=Mob Drop Plant Seed
+item.lifeEssenceName.name=Life Essence
 
 phrase.AttainedDrops.BlockMobPlantUpdateComment=Random number in 0 - x that a plant update will occur, the higher x, the rarer the occasion
 phrase.AttainedDrops.BlockMobDirtResetComment=Random number in 0 - x that the dirt will reset, the higher x, the rarer the occasion

@@ -8,12 +8,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class AD_Items
 {
 	public static Item plantSeed;
+	public static Item lifeEssence;
 
 	public static void init()
 	{
 		plantSeed = new ItemPlantSeed();
+		lifeEssence = new ItemLifeEssence();
 
 		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
+		GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
 
 	}
 
