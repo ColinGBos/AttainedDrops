@@ -23,4 +23,4 @@ phrase.AttainedDrops.EnrichXpUseComment=The amount of xp that gets consumed by t
 phrase.AttainedDrops.DirtBlank=This Vitalized Soil has not been enriched yet
 phrase.AttainedDrops.DirtStart=Vitalized with:
 
-phrase.AttainedDrops.BulbEnablingComment=This is to chose which bulbs are enabled, the items that they represent are: BlazeRod, EnderPearl, Gunpowder, Bone, PiderEye, String, Ghast Tear, Rotten Flesh, Slimeball
+phrase.AttainedDrops.BulbEnablingComment=This is to chose which bulbs are enabled, the items that they represent are: BlazeRod, EnderPearl, Gunpowder, Bone, SpiderEye, String, Ghast Tear, Rotten Flesh, Slimeball

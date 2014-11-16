@@ -35,8 +35,8 @@ public class BlockMobDirt extends Block
 	public void registerBlockIcons(IIconRegister icon)
 	{
 		mobDirtSide = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtSideIcon);
-		mobDirtIcon = new IIcon[BlockInfo.MobDrops.length];
-		for (int i = 0; i < BlockInfo.MobDrops.length; ++i)
+		mobDirtIcon = new IIcon[BlockInfo.MobDrops.length + 1];
+		for (int i = 0; i < BlockInfo.MobDrops.length + 1; ++i)
 		{
 			mobDirtIcon[i] = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtIcon + i);
 		}
@@ -59,7 +59,7 @@ public class BlockMobDirt extends Block
 		int l = player.experienceLevel;
 		if (player.getCurrentEquippedItem() != null)
 		{
-			for (int i = 0; i < BlockInfo.MobDrops.length; i++)
+			for (int i = 0; i < BlockInfo.MobDrops.length + 1; i++)
 			{
 				if (canPlayerEnrich(player, k, i, l) == true)
 				{
@@ -80,8 +80,8 @@ public class BlockMobDirt extends Block
 				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart")
 						+ " "
 						+ EnumChatFormatting.GREEN
-						+ StatCollector.translateToLocal(BlockInfo.MobDrops[k].getUnlocalizedNameInefficiently(new ItemStack(
-								BlockInfo.MobDrops[k])) + ".name")));
+						+ StatCollector.translateToLocal(BlockInfo.MobDrops[k - 1].getUnlocalizedNameInefficiently(new ItemStack(
+								BlockInfo.MobDrops[k - 1])) + ".name")));
 			} else
 			{
 				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtBlank")));

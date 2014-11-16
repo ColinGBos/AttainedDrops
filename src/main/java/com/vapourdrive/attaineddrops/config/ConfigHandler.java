@@ -10,11 +10,11 @@ public class ConfigHandler
 
 	public static void init(String configPath)
 	{
-		adConfig = new File(configPath + "attaineddrops.cfg");
 		bulbConfig = new File(configPath + "bulbsettings.cfg");
+		adConfig = new File(configPath + "attaineddrops.cfg");
 
-		ADConfig.init(adConfig);
 		ADBulbConfig.init(bulbConfig);
+		ADConfig.init(adConfig);
 
 	}
 

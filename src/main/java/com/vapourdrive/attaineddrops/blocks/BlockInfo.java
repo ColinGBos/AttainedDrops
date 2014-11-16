@@ -1,13 +1,16 @@
 package com.vapourdrive.attaineddrops.blocks;
 
+import com.vapourdrive.attaineddrops.config.BulbInfo;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class BlockInfo
 {
 	public static Item[] MobDrops =
-	{ null, Items.blaze_rod, Items.ender_pearl, Items.gunpowder, Items.bone, Items.spider_eye, Items.string, Items.ghast_tear,
+	{Items.blaze_rod, Items.ender_pearl, Items.gunpowder, Items.bone, Items.spider_eye, Items.string, Items.ghast_tear,
 			Items.rotten_flesh, Items.slime_ball };
+	public static Item[] EnabledDrops = writeItems(MobDrops);
 
 	public static final String BlockIconLocation = "attaineddrops:";
 
@@ -89,5 +92,20 @@ public class BlockInfo
 	public static int BlockConcentrateDropUpateDefault = 5;
 	public static int BlockConcentrateDropUpate;
 	public static final String BlockConcentrateDropUpdateName = "VitalizedSoilUpdate";
-
+	
+	
+	public static Item[] writeItems(Item[] mobDrops2)
+	{
+		int i;
+		
+		for(i = 0; i < BlockInfo.MobDrops.length; i++)
+		{
+			if(BulbInfo.EnabledBulbs.getBoolean() == true)
+			{
+				return null;
+			}
+		}
+		return null;
+	}
+	
 }

@@ -2,6 +2,7 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.Configuration;
 
 public class ADBulbConfig
@@ -18,9 +19,9 @@ public class ADBulbConfig
 
 		config.load();
 
-		
-		BulbInfo.EnabledBulbs = config.get(CATEGORY_BULB_ITEM_ENABLING, BulbInfo.EnabledBulbsName, BulbInfo.EnabledBulbsDefault, "",
-				BulbInfo.isBulbEnablingFixedLength, BulbInfo.EnabledBulbsMaxLength);
+		BulbInfo.EnabledBulbs = config.get(CATEGORY_BULB_ITEM_ENABLING, BulbInfo.EnabledBulbsName, BulbInfo.EnabledBulbsDefault,
+				StatCollector.translateToLocal("phrase.AttainedDrops.BulbEnablingComment"), BulbInfo.isBulbEnablingFixedLength,
+				BulbInfo.EnabledBulbsMaxLength);
 
 		config.save();
 	}

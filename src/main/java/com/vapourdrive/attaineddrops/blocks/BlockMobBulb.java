@@ -33,10 +33,10 @@ public class BlockMobBulb extends Block
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register)
 	{
-		bulbTop = new IIcon[(BlockInfo.MobDrops.length - 1)];
-		bulbSide = new IIcon[(BlockInfo.MobDrops.length - 1)];
+		bulbTop = new IIcon[(BlockInfo.MobDrops.length)];
+		bulbSide = new IIcon[(BlockInfo.MobDrops.length)];
 
-		for (int i = 0; i < (BlockInfo.MobDrops.length - 1); ++i)
+		for (int i = 0; i < (BlockInfo.MobDrops.length); ++i)
 		{
 			bulbTop[i] = register.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobBulbTopIcon + i);
 			bulbSide[i] = register.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobBulbSideIcon + i);
@@ -105,7 +105,7 @@ public class BlockMobBulb extends Block
 	@Override
 	public Item getItemDropped(int meta, Random rand, int fortune)
 	{
-		return BlockInfo.MobDrops[meta + 1];
+		return BlockInfo.MobDrops[meta];
 	}
 
 	@Override
