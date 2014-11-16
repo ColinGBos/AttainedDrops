@@ -16,7 +16,6 @@ public class ItemLifeEssence extends Item
 		this.setUnlocalizedName(ItemInfo.LifeEssenceName);
 	}
 
-	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister register)

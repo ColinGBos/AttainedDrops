@@ -24,8 +24,9 @@ public class ADConfig
 	{
 		config = new Configuration(adConfig);
 
+		System.out.println("[Attained Drops]Loading config for Attained Drops");
+
 		config.load();
-		System.out.println("[Attained Drops]Generating config for Attained Drops");
 
 		// Block Update times
 		BlockInfo.BlockMobPlantUpdate = config.getInt(BlockInfo.BlockMobPlantUpdateName, CATEGORY_BLOCKUPDATES,

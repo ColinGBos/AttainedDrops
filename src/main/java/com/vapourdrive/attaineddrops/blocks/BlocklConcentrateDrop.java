@@ -35,20 +35,14 @@ public class BlocklConcentrateDrop extends Block
 
 		int l = world.getBlockMetadata(x, y, z);
 
-		if (rand.nextInt(BlockInfo.BlockConcentrateDropUpate) == 0)
-		{
-			++l;
-			world.setBlockMetadataWithNotify(x, y, z, l, 2);
-		}
-		if (l > 3 && l < 15)
+		if (l < 15 && rand.nextInt(3) == 0)
 		{
 			l++;
 			int i = x + (rand.nextInt(3) - 1);
-			int j = y + (rand.nextInt(3) - 1);
 			int k = z + (rand.nextInt(3) - 1);
-			if (world.getBlock(i, j, k) == Blocks.dirt || world.getBlock(i, j, k) == Blocks.grass)
+			if (world.getBlock(i, y, k) == Blocks.dirt || world.getBlock(i, y, k) == Blocks.grass)
 			{
-				world.setBlock(i, j, k, AD_Blocks.BlockMobDirt, 0, 2);
+				world.setBlock(i, y, k, AD_Blocks.BlockMobDirt, 0, 2);
 				world.setBlockMetadataWithNotify(x, y, z, l, 2);
 			}
 		}
