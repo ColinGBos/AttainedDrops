@@ -36,7 +36,7 @@ public class BlockMobDirt extends Block
 	{
 		mobDirtSide = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtSideIcon);
 		mobDirtIcon = new IIcon[BlockInfo.MobDrops.length + 1];
-		for (int i = 0; i < BlockInfo.MobDrops.length + 1; ++i)
+		for (int i = 0; i <= BlockInfo.MobDrops.length; ++i)
 		{
 			mobDirtIcon[i] = icon.registerIcon(BlockInfo.BlockIconLocation + BlockInfo.BlockMobDirtIcon + i);
 		}
@@ -59,11 +59,11 @@ public class BlockMobDirt extends Block
 		int l = player.experienceLevel;
 		if (player.getCurrentEquippedItem() != null)
 		{
-			for (int i = 0; i < BlockInfo.MobDrops.length + 1; i++)
+			for (int i = 0; i < BlockInfo.MobDrops.length; i++)
 			{
 				if (canPlayerEnrich(player, k, i, l) == true)
 				{
-					world.setBlockMetadataWithNotify(x, y, z, i, 2);
+					world.setBlockMetadataWithNotify(x, y, z, i + 1, 2);
 					world.playSoundAtEntity(player, "dig.grass", (float) 0.6, (float) 0.8);
 					if (player.capabilities.isCreativeMode == false)
 					{
@@ -92,11 +92,14 @@ public class BlockMobDirt extends Block
 
 	public boolean canPlayerEnrich(EntityPlayer player, int meta, int dropNumber, int experienceLevel)
 	{
-		if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[dropNumber] && meta != dropNumber)
+		if (player.getCurrentEquippedItem().getItem() == BlockInfo.MobDrops[dropNumber])
 		{
-			if (experienceLevel >= BlockInfo.EnrichXpUse || BlockInfo.EnrichXpUse == 0)
+			if(meta != (dropNumber + 1))
 			{
-				return true;
+				if (experienceLevel >= BlockInfo.EnrichXpUse || BlockInfo.EnrichXpUse == 0 || player.capabilities.isCreativeMode)
+				{
+					return true;
+				}
 			}
 		}
 		return false;
