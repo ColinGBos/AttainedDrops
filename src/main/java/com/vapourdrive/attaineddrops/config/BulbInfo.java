@@ -6,6 +6,7 @@ public class BulbInfo
 {
 	public static String EnabledBulbsName = "Enabling Bulbs";
 	public static int xpUseDefault = 0;
+	public static int sproutRateDefault = 20;
 	
 	public static Property EnabledBulbs0;
 	public static Property EnabledBulbs1;
@@ -27,5 +28,15 @@ public class BulbInfo
 	public static Property XPUse7;
 	public static Property XPUse8;
 	
+	public static Property SproutChance0;
+	public static Property SproutChance1;
+	public static Property SproutChance2;
+	public static Property SproutChance3;
+	public static Property SproutChance4;
+	public static Property SproutChance5;
+	public static Property SproutChance6;
+	public static Property SproutChance7;
+	public static Property SproutChance8;
+
 	public static boolean EnabledBulbsDefault = true;
 }

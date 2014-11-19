@@ -132,6 +132,16 @@ public class BlockMobBulb extends Block
 			return this.quantityDropped(rand);
 		}
 	}
+	
+	@Override
+    public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta) 
+	{
+		if (world.getBlock(x, y - 1, z) != null && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobPlant)
+		{
+			world.setBlockMetadataWithNotify(x, y - 1, z, 7, 2);
+		}
+	}
+
 
 	public int tickRate(World world)
 	{

@@ -14,6 +14,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import com.vapourdrive.attaineddrops.config.BulbInfo;
 import com.vapourdrive.attaineddrops.items.AD_Items;
 
 import cpw.mods.fml.relauncher.Side;
@@ -63,6 +64,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public void setBlockBoundsBasedOnState(IBlockAccess block, int x, int y, int z)
 	{
 		this.maxY = (double) ((float) (block.getBlockMetadata(x, y, z) * 2 + 2) / 16.0F);
+		if(maxY > 1.0F)
+		{
+			maxY = 1.0F;
+		}
 		float f = 0.125F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, (float) this.maxY, 0.5F + f);
 	}
@@ -83,10 +88,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public boolean func_149851_a(World world, int x, int y, int z, boolean bool)
 	{
 		int i = world.getBlockMetadata(x, y, z);
-		if (i < 7)
+		if (i < 10)
 		{
 			return true;
-		} else if (i == 7 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
+		} else if (i == 10 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 		{
 			return true;
 		}
@@ -110,7 +115,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		int l = world.getBlockMetadata(x, y, z);
 		int i = l + MathHelper.getRandomIntegerInRange(world.rand, 2, 5);
 
-		if (l == 7 && BlockInfo.CanBulbBonemeal == true)
+		if (l == 10 && BlockInfo.CanBulbBonemeal == true)
 		{
 			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && world.getBlockMetadata(x, y - 1, z) != 0
 					&& world.rand.nextInt(BlockInfo.ChancetoBonemealBulb) == 0)
@@ -123,9 +128,9 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 			}
 		}
 
-		if (i > 7)
+		if (i > 10)
 		{
-			i = 7;
+			i = 10;
 		}
 
 		world.setBlockMetadataWithNotify(x, y, z, i, 2);
@@ -136,23 +141,23 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	{
 		super.updateTick(world, x, y, z, rand);
 
-		int l = world.getBlockMetadata(x, y, z);
+		int meta = world.getBlockMetadata(x, y, z);
+		int dropNumber = world.getBlockMetadata(x, y - 1, z);
 
-		if (l < 7)
+		if (meta < 10)
 		{
 			if (rand.nextInt(BlockInfo.BlockMobPlantUpdate) == 0)
 			{
-				++l;
-				world.setBlockMetadataWithNotify(x, y, z, l, 2);
+				++meta;
+				world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 			}
 		}
-		if (l == 7)
+		if (meta == 10 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt && dropNumber != 0)
 		{
-			if (rand.nextInt(BlockInfo.BlockMobPlantUpdate) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z)
-					&& world.getBlockMetadata(x, y - 1, z) != 0)
+			if (rand.nextInt(getBulbRate(dropNumber)) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 			{
-				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (world.getBlockMetadata(x, y - 1, z) - 1), 2);
-				if (rand.nextInt(BlockInfo.BlockMobDirtReset) == 0 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
+				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (dropNumber - 1), 2);
+				if (rand.nextInt(BlockInfo.BlockMobDirtReset) == 0)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -193,6 +198,33 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public int quantityDropped(Random rand)
 	{
 		return (rand.nextInt(2) + 1);
+	}
+
+	public static int getBulbRate(int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 1:
+			return BulbInfo.SproutChance0.getInt();
+		case 2:
+			return BulbInfo.SproutChance1.getInt();
+		case 3:
+			return BulbInfo.SproutChance2.getInt();
+		case 4:
+			return BulbInfo.SproutChance3.getInt();
+		case 5:
+			return BulbInfo.SproutChance4.getInt();
+		case 6:
+			return BulbInfo.SproutChance5.getInt();
+		case 7:
+			return BulbInfo.SproutChance6.getInt();
+		case 8:
+			return BulbInfo.SproutChance7.getInt();
+		case 9:
+			return BulbInfo.SproutChance8.getInt();
+		default:
+			return 0;
+		}
 	}
 
 }
