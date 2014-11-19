@@ -132,7 +132,7 @@ public class BlockMobDirt extends Block
 			return true;
 		}
 	}
-	
+
 	public static int getXPUse(int dropNumber)
 	{
 		switch (dropNumber)

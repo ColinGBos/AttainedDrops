@@ -14,7 +14,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.vapourdrive.attaineddrops.config.BulbInfo;
 import com.vapourdrive.attaineddrops.items.AD_Items;
 
 import cpw.mods.fml.relauncher.Side;
@@ -64,7 +63,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public void setBlockBoundsBasedOnState(IBlockAccess block, int x, int y, int z)
 	{
 		this.maxY = (double) ((float) (block.getBlockMetadata(x, y, z) * 2 + 2) / 16.0F);
-		if(maxY > 1.0F)
+		if (maxY > 1.0F)
 		{
 			maxY = 1.0F;
 		}
@@ -114,14 +113,15 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	{
 		int l = world.getBlockMetadata(x, y, z);
 		int i = l + MathHelper.getRandomIntegerInRange(world.rand, 2, 5);
+		int dropNumber = world.getBlockMetadata(x, y - 1, z);
 
-		if (l == 8 && BlockInfo.CanBulbBonemeal == true)
+		if (l == 8 && BulbHelper.canBonemealBulb(dropNumber - 1) == true)
 		{
-			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && world.getBlockMetadata(x, y - 1, z) != 0
-					&& world.rand.nextInt(BlockInfo.ChancetoBonemealBulb) == 0)
+			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && dropNumber != 0
+					&& world.rand.nextInt(BulbHelper.chanceForBoneMeal(dropNumber - 1)) == 0)
 			{
-				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (world.getBlockMetadata(x, y - 1, z) - 1), 2);
-				if (world.rand.nextInt(BlockInfo.BlockMobDirtReset) == 0 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt)
+				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (dropNumber - 1), 2);
+				if (world.rand.nextInt(BulbHelper.getSoilResetChance(dropNumber - 1)) == 0 && BulbHelper.getCanSoilReset(dropNumber - 1) == true)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -154,10 +154,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		}
 		if (meta == 8 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt && dropNumber != 0)
 		{
-			if (rand.nextInt(getBulbRate(dropNumber)) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
+			if (rand.nextInt(BulbHelper.getBulbRate(dropNumber)) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 			{
 				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (dropNumber - 1), 2);
-				if (rand.nextInt(BlockInfo.BlockMobDirtReset) == 0)
+				if (rand.nextInt(BulbHelper.getSoilResetChance(dropNumber - 1)) == 0 && BulbHelper.getCanSoilReset(dropNumber - 1) == true)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -198,33 +198,6 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public int quantityDropped(Random rand)
 	{
 		return (rand.nextInt(2) + 1);
-	}
-
-	public static int getBulbRate(int dropNumber)
-	{
-		switch (dropNumber)
-		{
-		case 1:
-			return BulbInfo.SproutChance0.getInt();
-		case 2:
-			return BulbInfo.SproutChance1.getInt();
-		case 3:
-			return BulbInfo.SproutChance2.getInt();
-		case 4:
-			return BulbInfo.SproutChance3.getInt();
-		case 5:
-			return BulbInfo.SproutChance4.getInt();
-		case 6:
-			return BulbInfo.SproutChance5.getInt();
-		case 7:
-			return BulbInfo.SproutChance6.getInt();
-		case 8:
-			return BulbInfo.SproutChance7.getInt();
-		case 9:
-			return BulbInfo.SproutChance8.getInt();
-		default:
-			return 0;
-		}
 	}
 
 }

@@ -111,8 +111,17 @@ public class BlockMobBulb extends Block
 	@Override
 	public int quantityDropped(Random rand)
 	{
-		return (rand.nextInt(BlockInfo.BulbDynamicDropNumber) + BlockInfo.BulbStaticDropNumber);
+		return 1;
 	}
+	
+	@Override
+    public int quantityDropped(int meta, int fortune, Random random)
+    {
+		int DropNumber;
+		DropNumber = BulbHelper.staticDropNumber(meta) + BulbHelper.dynamicDropNumber(meta);
+		
+        return (quantityDroppedWithBonus(fortune, random) * DropNumber);
+    }
 
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random rand)
@@ -132,16 +141,15 @@ public class BlockMobBulb extends Block
 			return this.quantityDropped(rand);
 		}
 	}
-	
+
 	@Override
-    public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta) 
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta)
 	{
 		if (world.getBlock(x, y - 1, z) != null && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobPlant)
 		{
 			world.setBlockMetadataWithNotify(x, y - 1, z, 7, 2);
 		}
 	}
-
 
 	public int tickRate(World world)
 	{
