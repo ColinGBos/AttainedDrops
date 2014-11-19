@@ -88,10 +88,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public boolean func_149851_a(World world, int x, int y, int z, boolean bool)
 	{
 		int i = world.getBlockMetadata(x, y, z);
-		if (i < 10)
+		if (i < 8)
 		{
 			return true;
-		} else if (i == 10 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
+		} else if (i == 8 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 		{
 			return true;
 		}
@@ -115,7 +115,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		int l = world.getBlockMetadata(x, y, z);
 		int i = l + MathHelper.getRandomIntegerInRange(world.rand, 2, 5);
 
-		if (l == 10 && BlockInfo.CanBulbBonemeal == true)
+		if (l == 8 && BlockInfo.CanBulbBonemeal == true)
 		{
 			if (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && world.getBlockMetadata(x, y - 1, z) != 0
 					&& world.rand.nextInt(BlockInfo.ChancetoBonemealBulb) == 0)
@@ -128,9 +128,9 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 			}
 		}
 
-		if (i > 10)
+		if (i > 8)
 		{
-			i = 10;
+			i = 8;
 		}
 
 		world.setBlockMetadataWithNotify(x, y, z, i, 2);
@@ -144,7 +144,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		int meta = world.getBlockMetadata(x, y, z);
 		int dropNumber = world.getBlockMetadata(x, y - 1, z);
 
-		if (meta < 10)
+		if (meta < 8)
 		{
 			if (rand.nextInt(BlockInfo.BlockMobPlantUpdate) == 0)
 			{
@@ -152,7 +152,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 				world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 			}
 		}
-		if (meta == 10 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt && dropNumber != 0)
+		if (meta == 8 && world.getBlock(x, y - 1, z) == AD_Blocks.BlockMobDirt && dropNumber != 0)
 		{
 			if (rand.nextInt(getBulbRate(dropNumber)) == 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
 			{
@@ -168,7 +168,7 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	@Override
 	public Item getItemDropped(int meta, Random rand, int fortune)
 	{
-		if (meta == 7)
+		if (meta >= 7)
 		{
 			return AD_Items.plantSeed;
 		} else
