@@ -118,15 +118,19 @@ public class BlockMobBulb extends Block
     public int quantityDropped(int meta, int fortune, Random random)
     {
 		int DropNumber;
-		DropNumber = BulbHelper.staticDropNumber(meta) + BulbHelper.dynamicDropNumber(meta);
+		DropNumber = BulbHelper.staticDropNumber(meta) + random.nextInt(BulbHelper.dynamicDropNumber(meta));
 		
-        return (quantityDroppedWithBonus(fortune, random) * DropNumber);
+		if(BulbHelper.canFortuneBulb(meta) == true)
+		{
+	        return (quantityDroppedWithBonus(fortune, random) + DropNumber);
+		}
+		else return DropNumber;
     }
 
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random rand)
 	{
-		if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(0, rand, fortune) && BlockInfo.CanFortuneBulb == true)
+		if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(0, rand, fortune))
 		{
 			int j = rand.nextInt(fortune + 2) - 1;
 
@@ -159,15 +163,16 @@ public class BlockMobBulb extends Block
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int x, int y, int z, Random rand)
 	{
-		if (BlockInfo.ParticleBulb == true)
+		int dropNumber = world.getBlockMetadata(x, y, z);
+		if (BulbHelper.canSpawnParticles(dropNumber) == true)
 		{
-			particles(world, x, y, z);
+			particles(world, x, y, z, dropNumber);
 		}
 	}
 
-	private void particles(World world, int x, int y, int z)
+	private void particles(World world, int x, int y, int z, int dropNumber)
 	{
-		if (world.rand.nextInt(BlockInfo.ChancetoParticle) == 0)
+		if (world.rand.nextInt(BulbHelper.particleSpawnRate(dropNumber)) == 0)
 		{
 			double d0 = (double) ((float) x + world.rand.nextFloat());
 			double d1 = (double) ((float) y + world.rand.nextFloat());

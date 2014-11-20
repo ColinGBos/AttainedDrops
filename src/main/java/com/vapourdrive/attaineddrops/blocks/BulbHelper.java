@@ -192,4 +192,85 @@ public class BulbHelper
 			return 0;
 		}
 	}
+	
+	public static boolean canFortuneBulb(int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 0:
+			return BulbInfo.CanFortune0.getBoolean();
+		case 1:
+			return BulbInfo.CanFortune1.getBoolean();
+		case 2:
+			return BulbInfo.CanFortune2.getBoolean();
+		case 3:
+			return BulbInfo.CanFortune3.getBoolean();
+		case 4:
+			return BulbInfo.CanFortune4.getBoolean();
+		case 5:
+			return BulbInfo.CanFortune5.getBoolean();
+		case 6:
+			return BulbInfo.CanFortune6.getBoolean();
+		case 7:
+			return BulbInfo.CanFortune7.getBoolean();
+		case 8:
+			return BulbInfo.CanFortune8.getBoolean();
+		default:
+			return true;
+		}
+	}
+	
+	public static boolean canSpawnParticles(int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 0:
+			return BulbInfo.CanParticle0.getBoolean();
+		case 1:
+			return BulbInfo.CanParticle1.getBoolean();
+		case 2:
+			return BulbInfo.CanParticle2.getBoolean();
+		case 3:
+			return BulbInfo.CanParticle3.getBoolean();
+		case 4:
+			return BulbInfo.CanParticle4.getBoolean();
+		case 5:
+			return BulbInfo.CanParticle5.getBoolean();
+		case 6:
+			return BulbInfo.CanParticle6.getBoolean();
+		case 7:
+			return BulbInfo.CanParticle7.getBoolean();
+		case 8:
+			return BulbInfo.CanParticle8.getBoolean();
+		default:
+			return true;
+		}
+	}
+	
+	public static int particleSpawnRate (int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 0:
+			return BulbInfo.ParticleRate0.getInt();
+		case 1:
+			return BulbInfo.ParticleRate1.getInt();
+		case 2:
+			return BulbInfo.ParticleRate2.getInt();
+		case 3:
+			return BulbInfo.ParticleRate3.getInt();
+		case 4:
+			return BulbInfo.ParticleRate4.getInt();
+		case 5:
+			return BulbInfo.ParticleRate5.getInt();
+		case 6:
+			return BulbInfo.ParticleRate6.getInt();
+		case 7:
+			return BulbInfo.ParticleRate7.getInt();
+		case 8:
+			return BulbInfo.ParticleRate8.getInt();
+		default:
+			return 0;
+		}
+	}
 }
