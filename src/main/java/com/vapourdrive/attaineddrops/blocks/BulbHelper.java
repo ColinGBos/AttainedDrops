@@ -27,11 +27,11 @@ public class BulbHelper
 		case 9:
 			return BulbInfo.SproutChance8.getInt();
 		default:
-			return 0;
+			return 1;
 		}
 	}
-	
-	public static boolean getCanSoilReset( int dropNumber)
+
+	public static boolean getCanSoilReset(int dropNumber)
 	{
 		switch (dropNumber)
 		{
@@ -57,7 +57,7 @@ public class BulbHelper
 			return true;
 		}
 	}
-	
+
 	public static int getSoilResetChance(int dropNumber)
 	{
 		switch (dropNumber)
@@ -81,10 +81,10 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.SoilUnEnrich8.getInt();
 		default:
-			return 0;
+			return 1;
 		}
 	}
-	
+
 	public static boolean canBonemealBulb(int dropNumber)
 	{
 		switch (dropNumber)
@@ -108,10 +108,10 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.EnableBonemealBulb8.getBoolean();
 		default:
-			return true;
+			return false;
 		}
 	}
-	
+
 	public static int chanceForBoneMeal(int dropNumber)
 	{
 		switch (dropNumber)
@@ -135,11 +135,11 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.BonemealChance8.getInt();
 		default:
-			return 0;
+			return 1;
 		}
 	}
-	
-	public static int staticDropNumber (int dropNumber)
+
+	public static int staticDropNumber(int dropNumber)
 	{
 		switch (dropNumber)
 		{
@@ -162,11 +162,11 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.StaticDrop8.getInt();
 		default:
-			return 0;
+			return 1;
 		}
 	}
-	
-	public static int dynamicDropNumber (int dropNumber)
+
+	public static int dynamicDropNumber(int dropNumber)
 	{
 		switch (dropNumber)
 		{
@@ -189,10 +189,10 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.DynamicDrop8.getInt();
 		default:
-			return 0;
+			return 1;
 		}
 	}
-	
+
 	public static boolean canFortuneBulb(int dropNumber)
 	{
 		switch (dropNumber)
@@ -216,10 +216,10 @@ public class BulbHelper
 		case 8:
 			return BulbInfo.CanFortune8.getBoolean();
 		default:
-			return true;
+			return false;
 		}
 	}
-	
+
 	public static boolean canSpawnParticles(int dropNumber)
 	{
 		switch (dropNumber)
@@ -246,8 +246,8 @@ public class BulbHelper
 			return true;
 		}
 	}
-	
-	public static int particleSpawnRate (int dropNumber)
+
+	public static int particleSpawnRate(int dropNumber)
 	{
 		switch (dropNumber)
 		{
@@ -269,6 +269,33 @@ public class BulbHelper
 			return BulbInfo.ParticleRate7.getInt();
 		case 8:
 			return BulbInfo.ParticleRate8.getInt();
+		default:
+			return 1;
+		}
+	}
+
+	public static int getXPUse(int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 1:
+			return BulbInfo.XPUse0.getInt();
+		case 2:
+			return BulbInfo.XPUse1.getInt();
+		case 3:
+			return BulbInfo.XPUse2.getInt();
+		case 4:
+			return BulbInfo.XPUse3.getInt();
+		case 5:
+			return BulbInfo.XPUse4.getInt();
+		case 6:
+			return BulbInfo.XPUse5.getInt();
+		case 7:
+			return BulbInfo.XPUse6.getInt();
+		case 8:
+			return BulbInfo.XPUse7.getInt();
+		case 9:
+			return BulbInfo.XPUse8.getInt();
 		default:
 			return 0;
 		}

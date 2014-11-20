@@ -69,7 +69,7 @@ public class BlockMobDirt extends Block
 					if (player.capabilities.isCreativeMode == false)
 					{
 						player.inventory.consumeInventoryItem(player.getCurrentEquippedItem().getItem());
-						player.experienceLevel = (l - BlockInfo.EnrichXpUse);
+						player.experienceLevel = (l - BulbHelper.getXPUse(i));
 					}
 					return true;
 				}

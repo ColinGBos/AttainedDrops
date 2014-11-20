@@ -8,12 +8,7 @@ tile.blockMobBulb.name=奇异果实
 item.plantSeedUnlocalizedName.name=奇异植物种子
 
 phrase.AttainedDrops.BlockMobPlantUpdateComment=0 - x之间取随机数决定植物是否发生更新,x越大几率就越低
-phrase.AttainedDrops.BlockMobDirtResetComment=0 - x之间取随机数决定泥土是否重置,x越大几率就越低
 phrase.AttainedDrops.BlockMobConcetrateDropComment=0 - x之间取随机数决定活化土是否传播,x越大几率就越低
-phrase.AttainedDrops.CanBulbBonemealComment=对成熟形态的植物使用骨粉是否能催生出果实,值为true时代表催生可行
-phrase.AttainedDrops.ChancetoBonemealBulbComment=0 - x之间取随机数决定骨粉是否能成功催熟果实,x越大几率就越低
-phrase.AttainedDrops.ChancetoParticleComment=0 - x之间取随机数决定果实是否生成粒子效果,x越大几率就越低
-phrase.AttainedDrops.CanBulbParticleComment=果实是否会生成粒子,值为true代表会生成粒子
 
 phrase.AttainedDrops.DirtBlank=该活化土尚未设定培育类型
 phrase.AttainedDrops.DirtStart=活化类型:

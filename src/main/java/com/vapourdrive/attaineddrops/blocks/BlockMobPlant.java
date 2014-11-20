@@ -87,10 +87,12 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	public boolean func_149851_a(World world, int x, int y, int z, boolean bool)
 	{
 		int i = world.getBlockMetadata(x, y, z);
+		int dropNumber = (world.getBlockMetadata(x, y - 1, z) - 1);
+		Block upperBlock = world.getBlock(x, y + 1, z);
 		if (i < 8)
 		{
 			return true;
-		} else if (i == 8 && BlockInfo.CanBulbBonemeal == true && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z))
+		} else if (i == 8 && BulbHelper.canBonemealBulb(dropNumber) == true && upperBlock.isAir(world, x, y, z))
 		{
 			return true;
 		}
