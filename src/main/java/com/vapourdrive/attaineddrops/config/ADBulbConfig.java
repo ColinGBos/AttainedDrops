@@ -2,6 +2,9 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
+import org.apache.logging.log4j.Level;
+
+import com.vapourdrive.attaineddrops.AttainedDrops;
 import com.vapourdrive.attaineddrops.blocks.BlockInfo;
 
 import net.minecraft.item.ItemStack;
@@ -27,7 +30,7 @@ public class ADBulbConfig
 	public static void init(File bulbConfig)
 	{
 		config = new Configuration(bulbConfig);
-		System.out.println("[Attained Drops]Loading config for Attained Drops");
+		AttainedDrops.log.log(Level.INFO, "Loading Bulb Config");
 
 		config.load();
 
@@ -117,24 +120,24 @@ public class ADBulbConfig
 		BulbInfo.SoilUnEnrich8 = config.get(UNENRICH_CHANCES, "Soil Un-Enrich Chance For " + getItemName(8),
 				BulbInfo.soilUnEnrichDefault[8], "", 1, 1000);
 
-		BulbInfo.SoilCanUnEnrich0 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(0), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich1 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(1), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich2 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(2), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich3 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(3), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich4 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(4), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich5 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(5), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich6 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(6), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich7 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(7), BulbInfo.EnableSoilResetDefault);
-		BulbInfo.SoilCanUnEnrich8 = config
-				.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(8), BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich0 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(0),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich1 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(1),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich2 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(2),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich3 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(3),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich4 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(4),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich5 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(5),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich6 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(6),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich7 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(7),
+				BulbInfo.EnableSoilResetDefault);
+		BulbInfo.SoilCanUnEnrich8 = config.get(UNENRICH_ENABLING, "Enable Soil Reset For " + getItemName(8),
+				BulbInfo.EnableSoilResetDefault);
 
 		BulbInfo.EnableBonemealBulb0 = config.get(BONE_MEAL_ENABLE, "Can Bonemeal Sprout " + getItemName(0) + " Bulb",
 				BulbInfo.EnableBonemealBulbDefault);

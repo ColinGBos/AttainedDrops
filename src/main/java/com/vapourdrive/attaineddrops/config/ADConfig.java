@@ -2,9 +2,12 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.Configuration;
 
+import com.vapourdrive.attaineddrops.AttainedDrops;
 import com.vapourdrive.attaineddrops.blocks.BlockInfo;
 
 public class ADConfig
@@ -22,7 +25,7 @@ public class ADConfig
 	{
 		config = new Configuration(adConfig);
 
-		System.out.println("[Attained Drops]Loading config for Attained Drops");
+		AttainedDrops.log.log(Level.INFO, "Loading Main Config");
 
 		config.load();
 
@@ -34,7 +37,7 @@ public class ADConfig
 		BlockInfo.BlockConcentrateDropUpate = config.getInt(BlockInfo.BlockConcentrateDropUpdateName, CATEGORY_BLOCKUPDATES,
 				BlockInfo.BlockConcentrateDropUpateDefault, BlockInfo.BlockMobPlantUpdateMin, BlockInfo.BlockMobPlantUpdateMax,
 				StatCollector.translateToLocal("phrase.AttainedDrops.BlockMobConcetrateDropComment"));
-		
+
 		config.save();
 
 	}

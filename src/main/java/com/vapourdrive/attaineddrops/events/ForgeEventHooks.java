@@ -1,6 +1,5 @@
 package com.vapourdrive.attaineddrops.events;
 
-
 public class ForgeEventHooks
 {
 	/*

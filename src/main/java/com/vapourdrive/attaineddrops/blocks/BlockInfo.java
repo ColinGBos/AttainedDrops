@@ -36,7 +36,6 @@ public class BlockInfo
 	public static String BlockMobPlantUpdatesKey = "BlockMobPlantUpdateKey";
 	public static String BlockMobPlantUpdateName = "BlockMobPlantUpdate";
 
-
 	// Vitalized Soil Planter
 	public static final String BlockConcentrateDropName = "blockConcentrateDrop";
 	public static final Float BlockConcentrateDropHardness = 0.8F;

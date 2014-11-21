@@ -1,5 +1,8 @@
 package com.vapourdrive.attaineddrops;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -33,6 +36,8 @@ public class AttainedDrops
 
 	public static CreativeTabs tabAttainedDrops;
 	public static String configPath;
+
+	public static final Logger log = LogManager.getLogger(ADModInfo.ModName);
 
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event)

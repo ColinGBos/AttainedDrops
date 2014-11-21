@@ -54,7 +54,8 @@ public class BlockMobBulb extends Block
 		if (side == 1 || side == 0)
 		{
 			return bulbTop[meta];
-		} else
+		}
+		else
 			return blockIcon;
 	}
 
@@ -113,19 +114,20 @@ public class BlockMobBulb extends Block
 	{
 		return 1;
 	}
-	
+
 	@Override
-    public int quantityDropped(int meta, int fortune, Random random)
-    {
+	public int quantityDropped(int meta, int fortune, Random random)
+	{
 		int DropNumber;
 		DropNumber = BulbHelper.staticDropNumber(meta) + random.nextInt(BulbHelper.dynamicDropNumber(meta));
-		
-		if(BulbHelper.canFortuneBulb(meta) == true)
+
+		if (BulbHelper.canFortuneBulb(meta) == true)
 		{
-	        return (quantityDroppedWithBonus(fortune, random) + DropNumber);
+			return (quantityDroppedWithBonus(fortune, random) + DropNumber);
 		}
-		else return DropNumber;
-    }
+		else
+			return DropNumber;
+	}
 
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random rand)
@@ -140,7 +142,8 @@ public class BlockMobBulb extends Block
 			}
 
 			return this.quantityDropped(rand) * (j + 1);
-		} else
+		}
+		else
 		{
 			return this.quantityDropped(rand);
 		}

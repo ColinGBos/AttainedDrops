@@ -18,12 +18,12 @@ public class AD_Blocks
 		BlockMobDirt = new BlockMobDirt();
 		BlockMobPlant = new BlockMobPlant();
 		BlockMobBulb = new BlockMobBulb();
-		BlockConcentrateDrop = new BlocklConcentrateDrop();
+		BlockConcentrateDrop = new BlockVitalizedSoil();
 
-		GameRegistry.registerBlock(BlockMobDirt, BlockInfo.BlockMobDirtName);
+		GameRegistry.registerBlock(BlockMobDirt, ItemMobDirt.class, BlockInfo.BlockMobDirtName);
 		GameRegistry.registerBlock(BlockMobPlant, BlockInfo.BlockMobPlantName);
 		GameRegistry.registerBlock(BlockMobBulb, BlockInfo.BlockMobBulbName);
-		GameRegistry.registerBlock(BlockConcentrateDrop, BlockInfo.BlockConcentrateDropName);
+		GameRegistry.registerBlock(BlockConcentrateDrop, ItemVitalizedSoil.class, BlockInfo.BlockConcentrateDropName);
 	}
 
 	public static void registerRecipes()

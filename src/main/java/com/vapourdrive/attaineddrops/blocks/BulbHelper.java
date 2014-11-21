@@ -4,6 +4,33 @@ import com.vapourdrive.attaineddrops.config.BulbInfo;
 
 public class BulbHelper
 {
+	public static Boolean isDropEnabled(int dropNumber)
+	{
+		switch (dropNumber)
+		{
+		case 0:
+			return BulbInfo.EnabledBulbs0.getBoolean();
+		case 1:
+			return BulbInfo.EnabledBulbs1.getBoolean();
+		case 2:
+			return BulbInfo.EnabledBulbs2.getBoolean();
+		case 3:
+			return BulbInfo.EnabledBulbs3.getBoolean();
+		case 4:
+			return BulbInfo.EnabledBulbs4.getBoolean();
+		case 5:
+			return BulbInfo.EnabledBulbs5.getBoolean();
+		case 6:
+			return BulbInfo.EnabledBulbs6.getBoolean();
+		case 7:
+			return BulbInfo.EnabledBulbs7.getBoolean();
+		case 8:
+			return BulbInfo.EnabledBulbs8.getBoolean();
+		default:
+			return true;
+		}
+	}
+
 	public static int getBulbRate(int dropNumber)
 	{
 		switch (dropNumber)

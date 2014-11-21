@@ -13,10 +13,10 @@ public class AD_Items
 	public static void init()
 	{
 		plantSeed = new ItemPlantSeed();
-		//lifeEssence = new ItemLifeEssence();
+		// lifeEssence = new ItemLifeEssence();
 
 		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
-		//GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
+		// GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
 
 	}
 

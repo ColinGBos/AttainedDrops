@@ -1,9 +1,14 @@
 package com.vapourdrive.attaineddrops.items;
 
+import java.util.List;
+
+import org.lwjgl.input.Keyboard;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
 import com.vapourdrive.attaineddrops.AttainedDrops;
@@ -45,5 +50,20 @@ public class ItemPlantSeed extends Item
 	public void registerIcons(IIconRegister register)
 	{
 		itemIcon = register.registerIcon(ItemInfo.TextureLocation + ItemInfo.PlantSeedIcon);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean useExtraInformation)
+	{
+		if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))
+		{
+			list.add("");
+			list.add("Plant on vitalized soil");
+		}
+		else
+		{
+			list.add(EnumChatFormatting.GRAY + "Hold Shift");
+		}
 	}
 }

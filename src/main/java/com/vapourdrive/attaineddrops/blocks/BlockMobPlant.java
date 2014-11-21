@@ -92,10 +92,12 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		if (i < 8)
 		{
 			return true;
-		} else if (i == 8 && BulbHelper.canBonemealBulb(dropNumber) == true && upperBlock.isAir(world, x, y, z))
-		{
-			return true;
 		}
+		else
+			if (i == 8 && BulbHelper.canBonemealBulb(dropNumber) == true && upperBlock.isAir(world, x, y, z))
+			{
+				return true;
+			}
 		return false;
 	}
 
@@ -123,7 +125,8 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 					&& world.rand.nextInt(BulbHelper.chanceForBoneMeal(dropNumber - 1)) == 0)
 			{
 				world.setBlock(x, y + 1, z, AD_Blocks.BlockMobBulb, (dropNumber - 1), 2);
-				if (world.rand.nextInt(BulbHelper.getSoilResetChance(dropNumber - 1)) == 0 && BulbHelper.getCanSoilReset(dropNumber - 1) == true)
+				if (world.rand.nextInt(BulbHelper.getSoilResetChance(dropNumber - 1)) == 0
+						&& BulbHelper.getCanSoilReset(dropNumber - 1) == true)
 				{
 					world.setBlockMetadataWithNotify(x, y - 1, z, 0, 2);
 				}
@@ -173,7 +176,8 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		if (meta >= 7)
 		{
 			return AD_Items.plantSeed;
-		} else
+		}
+		else
 			return null;
 	}
 
@@ -190,7 +194,8 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 			}
 
 			return this.quantityDropped(rand) * (j + 1);
-		} else
+		}
+		else
 		{
 			return this.quantityDropped(rand);
 		}

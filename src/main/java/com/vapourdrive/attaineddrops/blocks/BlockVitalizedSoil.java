@@ -14,11 +14,11 @@ import com.vapourdrive.attaineddrops.AttainedDrops;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlocklConcentrateDrop extends Block
+public class BlockVitalizedSoil extends Block
 {
 	public static IIcon BlockConcentrateDrop;
 
-	protected BlocklConcentrateDrop()
+	protected BlockVitalizedSoil()
 	{
 		super(Material.rock);
 		setBlockName(BlockInfo.BlockConcentrateDropName);
