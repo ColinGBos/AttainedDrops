@@ -3,7 +3,17 @@
 tile.blockMobDirt.name=Vitalized Soil
 tile.blockMobPlant.name=Mob Drop Plant
 tile.blockConcentrateDrop.name=Vitalized Soil Planter
-tile.blockMobBulb.name=Mob Drop Bulb 
+tile.blockMobBulb.item.blazeRod.name=Blaze Bulb
+tile.blockMobBulb.item.enderPearl.name=Ender Pearl Bulb
+tile.blockMobBulb.item.bone.name=Bone Bulb
+tile.blockMobBulb.item.slimeball.name=Slimeball Bulb
+tile.blockMobBulb.item.rottenFlesh.name=Blaze Bulb
+tile.blockMobBulb.item.ghastTear.name=Ghast Tear Bulb
+tile.blockMobBulb.item.sulfur.name=Gunpowder Bulb
+tile.blockMobBulb.item.string.name=String Bulb
+tile.blockMobBulb.item.spiderEye.name=Spider Eye Bulb
+tile.blockxpObelisk.name=Experience Obelisk
+tile.blockxpBall.name=Crystaline Experience
 
 item.plantSeedUnlocalizedName.name=Mob Drop Plant Seed
 item.lifeEssenceName.name=Life Essence

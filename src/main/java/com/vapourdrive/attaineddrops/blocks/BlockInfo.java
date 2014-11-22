@@ -44,5 +44,19 @@ public class BlockInfo
 	public static int BlockConcentrateDropUpateDefault = 5;
 	public static int BlockConcentrateDropUpate;
 	public static final String BlockConcentrateDropUpdateName = "VitalizedSoilUpdate";
+	
+	// XP Obelisk
+	public static final String BlockXPObeliskName = "blockxpObelisk";
+	public static final String BlockXPObeliskIcon = "xpObelisk";
+	public static final String BlockXPObeliskIconTop = "xpObeliskTop";
+	public static final Float BlockXPObeliskHardness = 5.0F;
+	public static final int BlockXPObeliskLength = 9;
+	
+	// XP Ball
+	public static final String BlockXPBallName = "blockxpBall";
+	public static final String BlockXPBallTopIcon = "xpBallTop";
+	public static final String BlockXPBallSideIcon = "xpBallSide";
+	public static final Float BlockXPBallHardness = 2.0F;
+	public static final Float BlockXPBallLight = 1.0F;
 
 }
