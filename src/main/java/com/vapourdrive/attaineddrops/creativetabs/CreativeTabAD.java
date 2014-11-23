@@ -14,7 +14,7 @@ public class CreativeTabAD extends CreativeTabs
 	public CreativeTabAD(int position, String tabID)
 	{
 		super(position, tabID);
-		// TODO Auto-generated constructor stub
+		setBackgroundImageName("attaineddrops.png");
 	}
 
 	@Override
@@ -36,5 +36,17 @@ public class CreativeTabAD extends CreativeTabs
 	{
 		return Item.getItemFromBlock(AD_Blocks.BlockConcentrateDrop);
 	}
+	
+	@Override
+    public boolean hasSearchBar()
+    {
+        return true;
+    }
+	
+	@Override
+    public int getSearchbarWidth()
+    {
+        return 70;
+    }
 
 }

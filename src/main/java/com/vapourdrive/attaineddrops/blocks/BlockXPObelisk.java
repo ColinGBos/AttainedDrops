@@ -3,9 +3,7 @@ package com.vapourdrive.attaineddrops.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 
 import com.vapourdrive.attaineddrops.AttainedDrops;
 
@@ -69,14 +67,6 @@ public class BlockXPObelisk extends Block
 	public boolean isOpaqueCube()
 	{
 		return false;
-	}
-	
-	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-	{
-		int i = world.getBlockMetadata(x, y, z);
-		world.setBlockMetadataWithNotify(x, y, z, i + 1, 2);
-		return true;
 	}
 
 }

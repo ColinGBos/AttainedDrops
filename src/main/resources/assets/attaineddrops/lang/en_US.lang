@@ -14,6 +14,7 @@ tile.blockMobBulb.item.string.name=String Bulb
 tile.blockMobBulb.item.spiderEye.name=Spider Eye Bulb
 tile.blockxpObelisk.name=Experience Obelisk
 tile.blockxpBall.name=Crystaline Experience
+tile.blockxpObsidian.name=Experienced Infused Obsidian
 
 item.plantSeedUnlocalizedName.name=Mob Drop Plant Seed
 item.lifeEssenceName.name=Life Essence

@@ -58,5 +58,11 @@ public class BlockInfo
 	public static final String BlockXPBallSideIcon = "xpBallSide";
 	public static final Float BlockXPBallHardness = 2.0F;
 	public static final Float BlockXPBallLight = 1.0F;
+	
+	// XP Obsidian
+	public static final String BlockXPObsidianName = "blockxpObsidian";
+	public static final String BlockXPObsidianIcon = "xpObsidian";
+	public static final Float BlockXPObsidianHardness = 50.0F;
+	public static final Float BlockXPObsidianResistance = 2000.0F;
 
 }

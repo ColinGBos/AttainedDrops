@@ -13,7 +13,7 @@ public class ItemLifeEssence extends Item
 	{
 		super();
 		setCreativeTab(AttainedDrops.tabAttainedDrops);
-		this.setUnlocalizedName(ItemInfo.LifeEssenceName);
+		setUnlocalizedName(ItemInfo.LifeEssenceName);
 	}
 
 	@Override

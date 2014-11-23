@@ -9,14 +9,17 @@ public class AD_Items
 {
 	public static Item plantSeed;
 	public static Item lifeEssence;
+	public static Item xpWand;
 
 	public static void init()
 	{
 		plantSeed = new ItemPlantSeed();
-		// lifeEssence = new ItemLifeEssence();
+		lifeEssence = new ItemLifeEssence();
+		xpWand = new ItemXPWand();
 
 		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
-		// GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
+		GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
+		GameRegistry.registerItem(xpWand, ItemInfo.XPWandName);
 
 	}
 

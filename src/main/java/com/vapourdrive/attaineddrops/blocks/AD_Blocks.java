@@ -14,6 +14,7 @@ public class AD_Blocks
 	public static Block BlockConcentrateDrop;
 	public static Block BlockXPBall;
 	public static Block BlockXPObelisk;
+	public static Block BlockXPObsidian;
 
 	public static void init()
 	{
@@ -23,6 +24,7 @@ public class AD_Blocks
 		BlockConcentrateDrop = new BlockVitalizedSoil();
 		BlockXPBall = new BlockXPBall();
 		BlockXPObelisk = new BlockXPObelisk();
+		BlockXPObsidian = new BlockXPObsidian();
 
 		GameRegistry.registerBlock(BlockMobDirt, ItemMobDirt.class, BlockInfo.BlockMobDirtName);
 		GameRegistry.registerBlock(BlockMobPlant, BlockInfo.BlockMobPlantName);
@@ -30,6 +32,7 @@ public class AD_Blocks
 		GameRegistry.registerBlock(BlockConcentrateDrop, ItemVitalizedSoil.class, BlockInfo.BlockConcentrateDropName);
 		GameRegistry.registerBlock(BlockXPBall, ItemXPBall.class, BlockInfo.BlockXPBallName);
 		GameRegistry.registerBlock(BlockXPObelisk, ItemXPObelisk.class, BlockInfo.BlockXPObeliskName);
+		GameRegistry.registerBlock(BlockXPObsidian, ItemXPObsidian.class, BlockInfo.BlockXPObsidianName);
 	}
 
 	public static void registerRecipes()
