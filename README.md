@@ -4,7 +4,7 @@ AttainedDrops
 Minecraft mod for farming mob drops - by VapourDrive
 
 Contributing
-============
+------------
 
 Please do! I am very much in favour of people helping me out, whether it be fixing
 what mistakes I have made, new textures or even new features (may not pull everything).
