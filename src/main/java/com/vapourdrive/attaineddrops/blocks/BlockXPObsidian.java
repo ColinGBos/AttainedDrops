@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockXPObsidian extends Block
 {
-	
+
 	protected BlockXPObsidian()
 	{
 		super(Material.rock);
@@ -22,7 +22,7 @@ public class BlockXPObsidian extends Block
 		setResistance(BlockInfo.BlockXPObsidianResistance);
 		setStepSound(soundTypeStone);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register)

@@ -65,13 +65,13 @@ public class BlockMobBulb extends Block
 		else
 			return blockIcon;
 	}
-	
+
 	@Override
 	public int getDamageValue(World world, int x, int y, int z)
 	{
 		return world.getBlockMetadata(x, y, z);
 	}
-	
+
 	@Override
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list)
 	{
@@ -170,12 +170,12 @@ public class BlockMobBulb extends Block
 			return this.quantityDropped(rand);
 		}
 	}
-	
+
 	@Override
-    public boolean canPlaceBlockAt(World world, int x, int y, int z)
-    {
-        return world.getBlock(x, y, z).isReplaceable(world, z, y, z) && !world.isAirBlock(x, y - 1, z);
-    }
+	public boolean canPlaceBlockAt(World world, int x, int y, int z)
+	{
+		return world.getBlock(x, y, z).isReplaceable(world, z, y, z) && !world.isAirBlock(x, y - 1, z);
+	}
 
 	@Override
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta)

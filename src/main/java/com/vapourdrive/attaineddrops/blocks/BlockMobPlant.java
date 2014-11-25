@@ -95,11 +95,10 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 		{
 			return true;
 		}
-		else
-			if (i == 8 && BulbHelper.canBonemealBulb(dropNumber) == true && upperBlock.isAir(world, x, y, z))
-			{
-				return true;
-			}
+		else if (i == 8 && BulbHelper.canBonemealBulb(dropNumber) == true && upperBlock.isAir(world, x, y, z))
+		{
+			return true;
+		}
 		return false;
 	}
 
@@ -208,11 +207,11 @@ public class BlockMobPlant extends BlockBush implements IGrowable
 	{
 		return (rand.nextInt(2) + 1);
 	}
-	
+
 	@Override
-    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
-    {
-        return new ItemStack(AD_Items.plantSeed, 1, 0);
-    }
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
+	{
+		return new ItemStack(AD_Items.plantSeed, 1, 0);
+	}
 
 }

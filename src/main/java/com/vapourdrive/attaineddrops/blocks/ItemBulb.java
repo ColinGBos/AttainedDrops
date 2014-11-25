@@ -12,13 +12,13 @@ public class ItemBulb extends ItemBlock
 		super(block);
 		this.hasSubtypes = true;
 	}
-	
+
 	@Override
 	public int getMetadata(int Meta)
 	{
 		return Meta;
 	}
-	
+
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack)
 	{

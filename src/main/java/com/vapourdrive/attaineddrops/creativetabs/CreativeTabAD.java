@@ -36,17 +36,17 @@ public class CreativeTabAD extends CreativeTabs
 	{
 		return Item.getItemFromBlock(AD_Blocks.BlockConcentrateDrop);
 	}
-	
+
 	@Override
-    public boolean hasSearchBar()
-    {
-        return true;
-    }
-	
+	public boolean hasSearchBar()
+	{
+		return true;
+	}
+
 	@Override
-    public int getSearchbarWidth()
-    {
-        return 70;
-    }
+	public int getSearchbarWidth()
+	{
+		return 70;
+	}
 
 }

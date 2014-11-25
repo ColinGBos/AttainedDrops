@@ -25,9 +25,9 @@ public class BlockXPBall extends Block
 		setHarvestLevel("pickaxe", 3);
 		setStepSound(soundTypeStone);
 		float f = 0.1875F;
-		setBlockBounds(f, 0.0F, f, 1 - f, 1 - (2*f), 1 - f);
+		setBlockBounds(f, 0.0F, f, 1 - f, 1 - (2 * f), 1 - f);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register)
@@ -51,7 +51,7 @@ public class BlockXPBall extends Block
 		else
 			return blockIcon;
 	}
-	
+
 	@Override
 	public boolean renderAsNormalBlock()
 	{

@@ -75,22 +75,21 @@ public class BlockMobDirt extends Block
 				}
 			}
 		}
-		else
-			if (world.isRemote)
+		else if (world.isRemote)
+		{
+			if (k != 0)
 			{
-				if (k != 0)
-				{
-					player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart")
-							+ " "
-							+ EnumChatFormatting.GREEN
-							+ StatCollector.translateToLocal(BlockInfo.MobDrops[k - 1].getUnlocalizedNameInefficiently(new ItemStack(
-									BlockInfo.MobDrops[k - 1])) + ".name")));
-				}
-				else
-				{
-					player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtBlank")));
-				}
+				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtStart")
+						+ " "
+						+ EnumChatFormatting.GREEN
+						+ StatCollector.translateToLocal(BlockInfo.MobDrops[k - 1].getUnlocalizedNameInefficiently(new ItemStack(
+								BlockInfo.MobDrops[k - 1])) + ".name")));
 			}
+			else
+			{
+				player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("phrase.AttainedDrops.DirtBlank")));
+			}
+		}
 		return false;
 	}
 

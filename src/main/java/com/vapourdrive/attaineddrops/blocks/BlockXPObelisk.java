@@ -27,7 +27,7 @@ public class BlockXPObelisk extends Block
 		float f = 0.1875F;
 		setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 1.0F, 0.5F + f);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register)
@@ -56,7 +56,7 @@ public class BlockXPObelisk extends Block
 		else
 			return blockIcon;
 	}
-	
+
 	@Override
 	public boolean renderAsNormalBlock()
 	{

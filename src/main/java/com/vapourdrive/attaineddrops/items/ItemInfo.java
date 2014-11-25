@@ -10,7 +10,7 @@ public class ItemInfo
 
 	public static String LifeEssenceName = "lifeEssenceName";
 	public static String LifeEssenceIcon = "lifeEssence";
-	
+
 	public static String XPWandName = "xpWandName";
 	public static String XPWandIcon = "xpWand";
 }

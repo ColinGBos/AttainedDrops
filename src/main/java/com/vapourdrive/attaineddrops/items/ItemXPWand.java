@@ -27,17 +27,17 @@ public class ItemXPWand extends Item
 	{
 		itemIcon = register.registerIcon(ItemInfo.TextureLocation + ItemInfo.XPWandIcon);
 	}
-	
+
 	@Override
-    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int meta, float xf, float yf, float zf)
-    {
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int meta, float xf, float yf, float zf)
+	{
 		int experience = player.experienceLevel;
-		if(world.getBlock(x, y, z) == Blocks.obsidian)
+		if (world.getBlock(x, y, z) == Blocks.obsidian)
 		{
 			world.setBlock(x, y, z, AD_Blocks.BlockXPObsidian, 0, 2);
 			player.experienceLevel = experience - 5;
 			return true;
 		}
-        return false;
-    }
+		return false;
+	}
 }
