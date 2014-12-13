@@ -1,9 +1,10 @@
 package com.vapourdrive.attaineddrops.items;
 
-import com.vapourdrive.attaineddrops.AttainedDrops;
-
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
+
+import com.vapourdrive.attaineddrops.AttainedDrops;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

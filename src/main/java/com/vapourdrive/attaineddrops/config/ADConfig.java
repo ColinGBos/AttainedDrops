@@ -2,10 +2,10 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
-import org.apache.logging.log4j.Level;
-
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.Configuration;
+
+import org.apache.logging.log4j.Level;
 
 import com.vapourdrive.attaineddrops.AttainedDrops;
 import com.vapourdrive.attaineddrops.blocks.BlockInfo;

@@ -2,13 +2,13 @@ package com.vapourdrive.attaineddrops.config;
 
 import java.io.File;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
+
 import org.apache.logging.log4j.Level;
 
 import com.vapourdrive.attaineddrops.AttainedDrops;
 import com.vapourdrive.attaineddrops.blocks.BlockInfo;
-
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 
 public class ADBulbConfig
 {

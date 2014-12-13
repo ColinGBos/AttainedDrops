@@ -1,16 +1,16 @@
 package com.vapourdrive.attaineddrops.items;
 
-import com.vapourdrive.attaineddrops.AttainedDrops;
-import com.vapourdrive.attaineddrops.blocks.AD_Blocks;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.vapourdrive.attaineddrops.AttainedDrops;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemXPWand extends Item
 {
@@ -34,7 +34,7 @@ public class ItemXPWand extends Item
 		int experience = player.experienceLevel;
 		if (world.getBlock(x, y, z) == Blocks.obsidian)
 		{
-			world.setBlock(x, y, z, AD_Blocks.BlockXPObsidian, 0, 2);
+//			world.setBlock(x, y, z, AD_Blocks.BlockXPObsidian, 0, 2);
 			player.experienceLevel = experience - 5;
 			return true;
 		}

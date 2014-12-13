@@ -8,18 +8,18 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class AD_Items
 {
 	public static Item plantSeed;
-	public static Item lifeEssence;
-	public static Item xpWand;
+//	public static Item lifeEssence;
+//	public static Item xpWand;
 
 	public static void init()
 	{
 		plantSeed = new ItemPlantSeed();
-		lifeEssence = new ItemLifeEssence();
-		xpWand = new ItemXPWand();
+//		lifeEssence = new ItemLifeEssence();
+//		xpWand = new ItemXPWand();
 
 		GameRegistry.registerItem(plantSeed, ItemInfo.PlantSeedName);
-		GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
-		GameRegistry.registerItem(xpWand, ItemInfo.XPWandName);
+//		GameRegistry.registerItem(lifeEssence, ItemInfo.LifeEssenceName);
+//		GameRegistry.registerItem(xpWand, ItemInfo.XPWandName);
 
 	}
 

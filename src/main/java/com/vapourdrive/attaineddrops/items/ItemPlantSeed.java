@@ -2,14 +2,14 @@ package com.vapourdrive.attaineddrops.items;
 
 import java.util.List;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+
+import org.lwjgl.input.Keyboard;
 
 import com.vapourdrive.attaineddrops.AttainedDrops;
 import com.vapourdrive.attaineddrops.blocks.AD_Blocks;
